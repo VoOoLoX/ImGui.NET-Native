@@ -2,12 +2,15 @@
 @echo off
 
 call %~dp0build-native.cmd Release x64
-copy %~dp0build\x64\Release\cimgui.dll %~dp0build\x64\Release\cimgui.win-x64.dll
-copy %~dp0build\x64\Release\cimplot.dll %~dp0build\x64\Release\cimplot.win-x64.dll
-copy %~dp0build\x64\Release\cimnodes.dll %~dp0build\x64\Release\cimnodes.win-x64.dll
-copy %~dp0build\x64\Release\cimguizmo.dll %~dp0build\x64\Release\cimguizmo.win-x64.dll
+mkdir %~dp0artifacts\win-x64
+copy %~dp0build\x64\Release\cimgui.dll %~dp0artifacts\win-x64\cimgui.dll
+copy %~dp0build\x64\Release\cimplot.dll %~dp0artifacts\win-x64\cimplot.dll
+copy %~dp0build\x64\Release\cimnodes.dll %~dp0artifacts\win-x64\cimnodes.dll
+copy %~dp0build\x64\Release\cimguizmo.dll %~dp0artifacts\win-x64\cimguizmo.dll
+
 call %~dp0build-native.cmd Release x86
-copy %~dp0build\x86\Release\cimgui.dll %~dp0build\x86\Release\cimgui.win-x86.dll
-copy %~dp0build\x86\Release\cimplot.dll %~dp0build\x86\Release\cimplot.win-x86.dll
-copy %~dp0build\x86\Release\cimnodes.dll %~dp0build\x86\Release\cimnodes.win-x86.dll
-copy %~dp0build\x86\Release\cimguizmo.dll %~dp0build\x86\Release\cimguizmo.win-x86.dll
+mkdir %~dp0artifacts\win-x86
+copy %~dp0build\x86\Release\cimgui.dll %~dp0artifacts\win-x86\cimgui.dll
+copy %~dp0build\x86\Release\cimplot.dll %~dp0artifacts\win-x86\cimplot.dll
+copy %~dp0build\x86\Release\cimnodes.dll %~dp0artifacts\win-x86\cimnodes.dll
+copy %~dp0build\x86\Release\cimguizmo.dll %~dp0artifacts\win-x86\cimguizmo.dll

@@ -2,7 +2,7 @@
 
 scriptPath="`dirname \"$0\"`"
 
-_CMakeBuildType=Debug
+_CMakeBuildType=Release
 
 while :; do
     if [ $# -le 0 ]; then
@@ -24,8 +24,13 @@ while :; do
     shift
 done
 
-mkdir -p $scriptPath/build/$_CMakeBuildType
-pushd $scriptPath/build/$_CMakeBuildType
+if [ "$(uname)" == "Darwin" ]; then
+    mkdir -p $scriptPath/build/$_CMakeBuildType/osx-x64
+    pushd $scriptPath/build/$_CMakeBuildType/osx-x64
+else
+    mkdir -p $scriptPath/build/$_CMakeBuildType/linux-x64
+    pushd $scriptPath/build/$_CMakeBuildType/linux-x64
+fi
 cmake ../.. -DCMAKE_BUILD_TYPE=$_CMakeBuildType
 make
 popd

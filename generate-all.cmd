@@ -12,7 +12,7 @@
     start generator.bat
 
     cd %~dp0/cimplot/generator
-    start  generator.bat
+    start generator.bat
 
     cd %~dp0
 ) | pause

@@ -1,6 +1,6 @@
 [submodule "cimgui"]
 	path = cimgui
-	url = https://github.com/psydack/cimgui.git
+	url = https://github.com/VoOoLoX/cimgui.git
 [submodule "cimplot"]
 	path = cimplot
 	url = https://github.com/psydack/cimplot.git

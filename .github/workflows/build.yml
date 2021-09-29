@@ -1,30 +1,25 @@
 name: CI
 
-# Controls when the workflow will run
 on:
   create:
 
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
 
   pull_request:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   Windows:
     runs-on: windows-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - name: Get Submodules
-        run: git submodule update --init --recursive
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Build
         run: ./ci-build.cmd
@@ -56,13 +51,11 @@ jobs:
   Linux:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - name: Get Submodules
-        run: git submodule update --init --recursive
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Build
         run: ./ci-build.sh
@@ -76,13 +69,11 @@ jobs:
   MacOS:
     runs-on: macos-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - name: Get Submodules
-        run: git submodule update --init --recursive
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Build
         run: ./ci-build.sh

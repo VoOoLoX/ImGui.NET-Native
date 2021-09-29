@@ -55,7 +55,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          path: main
           submodules: recursive
+
+      - run: echo $PWD
 
       - name: Build
         run: ./ci-build.sh
@@ -73,6 +76,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          path: main
           submodules: recursive
 
       - name: Build

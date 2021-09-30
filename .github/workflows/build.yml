@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: linux-x64
-          path: build/Release/linux-x64/
+          path: build/Release/linux-x64/*.so
 
   MacOS:
     runs-on: macos-latest
@@ -82,4 +82,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: osx-x64
-          path: build/Release/osx-x64/
+          path: build/Release/osx-x64/*.dylib

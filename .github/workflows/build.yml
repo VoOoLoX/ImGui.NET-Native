@@ -57,8 +57,6 @@ jobs:
         with:
           submodules: recursive
 
-      - run: ls -la
-
       - name: Build
         run: ./ci-build.sh
 

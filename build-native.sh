@@ -32,8 +32,6 @@ else
     pushd $scriptPath/build/$_CMakeBuildType/linux-x64
 fi
 
-cd $scriptPath
-
-cmake ../.. -DCMAKE_BUILD_TYPE=$_CMakeBuildType
+cmake ../../.. -DCMAKE_BUILD_TYPE=$_CMakeBuildType
 make
 popd

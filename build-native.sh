@@ -31,6 +31,9 @@ else
     mkdir -p $scriptPath/build/$_CMakeBuildType/linux-x64
     pushd $scriptPath/build/$_CMakeBuildType/linux-x64
 fi
+
+cd $scriptPath
+
 cmake ../.. -DCMAKE_BUILD_TYPE=$_CMakeBuildType
 make
 popd
